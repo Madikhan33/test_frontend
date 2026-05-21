@@ -117,8 +117,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const API_URL = 'https://recycling-register-contacted-mirror.trycloudflare.com/praise'
-const API_KEY = 'super-secret-key-123'
+const API_URL = '/api/praise'
 
 const name = ref('')
 const praise = ref('')
@@ -158,7 +157,6 @@ async function handlePraise() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-API-Key': API_KEY,
       },
       body: JSON.stringify({ name: trimmed }),
     })
